@@ -1,4 +1,5 @@
 $(function () {
+    localStorage.removeItem('token')
     $('#link_reg').click(function () {
         $('.reg-form').show()
         $('.login-form').hide()
