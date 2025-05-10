@@ -67,6 +67,17 @@ $(function () {
             }
         }) */
         layer.msg('登陆成功')
+        let info = JSON.parse(localStorage.getItem('info'))
+        if (info === null) {
+            info = {
+                userid: 1234,
+                nickname: '小小天下',
+                email: 'asfe@qq.com',
+                user_pic: 'assets/images/sample.jpg'
+            }
+        }
+        info.username = $('#uname_dl').val()
+        localStorage.setItem('info', JSON.stringify(info))
         localStorage.setItem('token', 'kdas123')
         location.href = '../index.html'
     })

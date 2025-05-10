@@ -8,6 +8,7 @@ $(function () {
                 Authorization: localStorage.getItem('token')
             }
         }
+        // 全局统一挂载complete，只要请求服务器失败就跳回主页！
         options.complete = function (jqxhr) {
             if (jqxhr.responseJSON.status === 1 && jqxhr.responseJSON.massage === "身份评论失败") {
                 localStorage.removeItem('token')
